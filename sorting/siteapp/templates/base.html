@@ -1,0 +1,92 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sorting App</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/menu.css' %}" rel="stylesheet">
+    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+    html,
+    body{
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body{
+        height: 100vh;
+      }
+
+      main{
+        height: 100%;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body{
+        height: 100vh;
+      }
+    }
+
+
+    </style>
+</head>
+{% block content %}
+<main>
+<center>
+    <div class="col-md-4">
+
+        <h2>Sorting Algorithms</h2>
+        <p></p>
+        <p></p>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Sort</button>
+        </form>
+    </div>
+</center>
+</main>
+  {% endblock %}
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+</footer>
+<!--/.Footer-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src='{% static "js/jquery-3.4.1.min.js" %}'></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src='{% static "js/popper.min.js" %}'></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src='{% static "js/mdb.min.js" %}'></script>
+<script src='{% static "js/jquery.maskedinput.min.js" %}'></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+
+</script>
+</body>
+
+</html>
